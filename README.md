@@ -38,7 +38,7 @@ Then web server ready for debugging is available at: http://localhost:45445
 make run-prod
 ```
 
-It will run the docker image [istex/istex-view:2.5.1](https://hub.docker.com/r/istex/istex-view/) using this production ready [docker-compose.yml](https://github.com/istex/istex-view/blob/master/docker-compose.yml).
+It will run the docker image [istex/istex-view:2.5.2](https://hub.docker.com/r/istex/istex-view/) using this production ready [docker-compose.yml](https://github.com/istex/istex-view/blob/master/docker-compose.yml).
 
 The web server ready for production is then available at ``http://<server ip>:45445/``
 
