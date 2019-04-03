@@ -11,7 +11,7 @@ class ViewDoc extends React.Component {
     this.state = {
       currentPage: 1,
       pages: 0,
-      istexId: '',
+      istexId: '', // Can be IstexId (40 caracters) or ArkId (ex. ark:/67375/0T8-542WXJ63-8)
       istexToken: jwtToken 
     };
   }
@@ -45,9 +45,16 @@ class ViewDoc extends React.Component {
 
   render() {
     let self = this;
+    var pdfUrl;
 
-    var pdfUrl = self.state.istexId ? self.props.config.istexApiUrl + '/document/' + this.state.istexId + '/fulltext/pdf?sid=istex-view' : '';
+    if (this.state.istexId.startsWith('ark:/')) {
+      pdfUrl = self.state.istexId ? self.props.config.istexApiUrl + '/' + this.state.istexId + '/fulltext.pdf?sid=istex-view' : '';
+    }
 
+    else {
+      pdfUrl = self.state.istexId ? self.props.config.istexApiUrl + '/document/' + this.state.istexId + '/fulltext/pdf?sid=istex-view' : '';
+    }
+    
     var ReactPdf2 = pdfUrl ? (
       <PDF src={pdfUrl} jwtToken={this.state.istexToken}>
         <PDFViewer />

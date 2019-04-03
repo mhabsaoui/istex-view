@@ -17,7 +17,15 @@ class IstexApiDocRecord extends React.Component {
     if (!self.props.config.istexApiProtocol || !self.props.config.istexApiDomain) return;
 
     let theUrl = self.props.config.istexApiProtocol + '://' + self.props.config.istexApiDomain;
-    theUrl += '/document/' + self.props.istexId + '/?sid=istex-view';
+
+    if (this.state.istexId.startsWith('ark:/67375/')) {
+      theUrl += '/' + self.props.istexId + '/?sid=istex-view';
+    }
+
+    else {
+      theUrl += '/document/' + self.props.istexId + '/?sid=istex-view';
+    }
+    
     $.get(theUrl).done(function (docRecord) {
       self.setState({
         loaded: true,

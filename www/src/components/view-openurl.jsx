@@ -133,7 +133,17 @@ class ViewOpenUrl extends React.Component {
   mapApiUrlToViewUrl(apiUrl) {
     let self = this;
 
-    var matches = apiUrl && apiUrl.match(new RegExp('api\.istex\.fr\/document\/([A-Z0-9]{40})\/'));
+    var matches;
+
+    if (apiUrl.includes('/document/')) {
+      matches = apiUrl && apiUrl.match(new RegExp('api\.istex\.fr\/document\/([A-Z0-9]{40})\/'));
+    }
+
+    if (apiUrl.includes('/ark:/67375/')) {
+      matches = apiUrl && apiUrl.match(new RegExp('api\.istex\.fr\/(ark:/67375\/[A-Z0-9]{3}-[A-Z0-9]{8}-[A-Z0-9])\/'));
+    }
+    
+
     if (matches) {
       if (self.props.config.openUrlFTRedirectTo == 'api-with-ezproxy-auth') {
         // When view.istex.fr is access behind the an ezproxy, 

@@ -8,7 +8,7 @@ class IstexApiDocButton extends React.Component {
     this.state = {
       atitle: '',
       genre: '',
-      istexId: '',
+      arkId: '',
       abstractNbLineView: 2,
     };
   }
@@ -19,7 +19,7 @@ class IstexApiDocButton extends React.Component {
     self.setState({
       atitle: self.props.doc.title,
       genre: self.props.doc.genre[0],
-      istexId: self.props.doc.id
+      arkId: self.props.doc.ark
     });
   }
 
@@ -27,9 +27,9 @@ class IstexApiDocButton extends React.Component {
     let self = this;
 
     return (
-      <a href={'/' + self.state.istexId}  className="btn btn-default btn-lg iv-doc-button" role="button" key={self.state.istexId} title={self.state.atitle}>
+      <a href={'/' + self.state.arkId}  className="btn btn-default btn-lg iv-doc-button" role="button" key={self.state.arkId} title={self.state.atitle}>
         <div className="iv-istex-icon" data-article-type={self.state.genre} title={self.state.genre}></div>
-        <span className="iv-istexid">{self.state.istexId}</span>
+        <span className="iv-arkId">{self.state.arkId}</span>
       </a>
     );
   }
