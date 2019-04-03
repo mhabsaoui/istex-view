@@ -1,6 +1,6 @@
 {
   "name": "istex-view",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "Visualisation interactive des documents ISTEX",
   "private": true,
   "scripts": {
