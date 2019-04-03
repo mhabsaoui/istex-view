@@ -7,7 +7,7 @@ class IstexViewFooter extends React.Component {
         <hr />
         <div className="col-lg-12">
           <p className="muted pull-right">
-            <a href="/">ISTEX VIEW</a> version 2.5.3
+            <a href="/">ISTEX VIEW</a> version 2.5.4
             <a href="https://github.com/istex/istex-view" className="iv-github-link"><img src="/images/github-16x16.png" alt="Code source d'ISTEX VIEW" /></a>
           </p>
         </div>

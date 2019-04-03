@@ -21,7 +21,7 @@ install: ## install depedencies thanks to a dockerized npm install
 	@make chown
 
 build: ## build the docker istex/istex-view image locally
-	@docker build -t istex/istex-view:2.5.3 --build-arg http_proxy --build-arg https_proxy .
+	@docker build -t istex/istex-view:2.5.4 --build-arg http_proxy --build-arg https_proxy .
 
 run-prod: ## run istex-view in production mode
 	@echo 'module.exports = {};' > ./www/src/config.local.js
